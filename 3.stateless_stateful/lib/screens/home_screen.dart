@@ -1,48 +1,32 @@
 import 'package:flutter/material.dart';
 
-import '../core/constants/app_layout.dart';
-import '../routes/app_routes.dart';
+import '../widgets/counter_section.dart';
+import '../widgets/layout_demo_section.dart';
 
-/// Landing screen: chooses between the stateless and stateful lessons.
+/// One scrollable page that combines two teaching blocks:
+/// **A)** counter + [setState], **B)** core layout widgets.
 ///
-/// Navigation uses the imperative [Navigator] API (`push` + [MaterialPageRoute])
-/// so beginners see the explicit stack model before named routes or `go_router`.
+/// [SingleChildScrollView] avoids overflow on small screens when both sections
+/// are tall. Spacing between sections uses [SizedBox] (fixed gap), not padding
+/// on the parent—both are valid; here we only need vertical separation.
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
+
+  static const double _sectionSpacing = 28;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('State Management Demo')),
-      body: Center(
-        child: Padding(
-          padding: AppLayout.screenPadding,
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Text(
-                'Compare how widgets behave when data changes.',
-                style: Theme.of(context).textTheme.bodyLarge,
-                textAlign: TextAlign.center,
-              ),
-              const SizedBox(height: AppLayout.beforeActionsGap),
-              FilledButton(
-                onPressed: () {
-                  Navigator.of(
-                    context,
-                  ).push<void>(AppRoutes.statelessExample());
-                },
-                child: const Text('Stateless Example'),
-              ),
-              const SizedBox(height: AppLayout.sectionGap),
-              FilledButton.tonal(
-                onPressed: () {
-                  Navigator.of(context).push<void>(AppRoutes.statefulExample());
-                },
-                child: const Text('Stateful Example'),
-              ),
-            ],
-          ),
+      appBar: AppBar(title: const Text('Flutter Foundation')),
+      body: SingleChildScrollView(
+        padding: const EdgeInsets.all(20),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: const [
+            CounterSection(),
+            SizedBox(height: _sectionSpacing),
+            LayoutDemoSection(),
+          ],
         ),
       ),
     );

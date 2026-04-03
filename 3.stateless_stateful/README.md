@@ -1,17 +1,18 @@
-# Lesson 3 — Stateless vs Stateful
+# Lesson 3 — Flutter foundation (UI + state)
 
-Interactive demo: **StatelessWidget** (UI never updates) vs **StatefulWidget** + **`setState`** (counter, reset, red text when count > 5).
+Single-screen demo: **setState** counter + **layout** (Column, Row, Expanded, Padding, SizedBox, Container).
 
-## Project layout
+## `lib/` layout
 
-| Path | Role |
-|------|------|
-| `lib/main.dart` | `main()` only |
-| `lib/app.dart` | `MaterialApp`, theme, `home` |
-| `lib/theme/app_theme.dart` | `ThemeData` |
-| `lib/routes/app_routes.dart` | `MaterialPageRoute` factories |
-| `lib/screens/` | `HomeScreen`, `StatelessScreen`, `StatefulScreen` |
-| `lib/widgets/section_heading.dart` | Shared title style |
-| `lib/core/constants/app_layout.dart` | Padding / gaps |
+```
+lib/
+├── main.dart                    # main(), FlutterFoundationApp (MaterialApp)
+├── screens/
+│   └── home_screen.dart         # ScrollView + both sections
+└── widgets/
+    ├── counter_section.dart     # StatefulWidget + setState
+    ├── layout_demo_section.dart # Stateless layout teaching block
+    └── reusable_button.dart     # CustomButton
+```
 
-Run: `flutter run` from this directory.
+Run: `flutter run`
