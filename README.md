@@ -21,11 +21,12 @@ flutter doctor
 | `2.material_cupertino` | MaterialApp home menu; **Material** vs **Cupertino** screens via `Navigator.push`. |
 | `3.stateless_stateful` | **Foundation**: `setState` counter + layout (Column/Row/Expanded/etc.) on one scrollable home (`lib/screens`, `lib/widgets`). |
 | `4.tasks_navigation` | **Tasks app**: list, add screen, `Navigator.pop` result, `ListView.builder`, complete/delete (`lib/models`, `screens`, `widgets`). |
+| `5.api_users` | **HTTP API**: `http` package, `async`/`await`, `FutureBuilder`, JSONPlaceholder users (`lib/services`, `screens`, `models`). |
 
 ### Run a project
 
 ```bash
-cd 1.hello   # or: cd 2.material_cupertino / cd 3.stateless_stateful / cd 4.tasks_navigation
+cd 1.hello   # or: cd 2.material_cupertino / … / cd 5.api_users
 flutter pub get
 flutter run
 ```
@@ -40,7 +41,8 @@ Flutter_learning/
 ├── 1.hello/                  # First exercise — standard `flutter create` app
 ├── 2.material_cupertino/     # Lesson 2 — Material vs Cupertino (`lib/app.dart`, `lib/screens/`)
 ├── 3.stateless_stateful/     # Lesson 3 — UI + setState foundation (`main.dart`, `screens/`, `widgets/`)
-└── 4.tasks_navigation/       # Lesson 4 — Navigation + list + tasks (`models/`, `screens/`, `widgets/`)
+├── 4.tasks_navigation/       # Lesson 4 — Navigation + list + tasks (`models/`, `screens/`, `widgets/`)
+└── 5.api_users/              # Lesson 5 — API + FutureBuilder (`services/`, `screens/`, `models/`)
 ```
 
 Add new lessons as `2.*`, `3.*`, etc., to keep the order clear.
