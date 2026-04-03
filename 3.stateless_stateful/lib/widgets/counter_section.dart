@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'reusable_button.dart';
+import 'app_button.dart';
 
 /// **StatefulWidget** = immutable configuration + a separate [State] object
 /// that Flutter keeps alive between frames.
@@ -66,7 +66,7 @@ class _CounterSectionState extends State<CounterSection> {
             Row(
               children: [
                 Expanded(
-                  child: CustomButton(
+                  child: AppButton(
                     label: 'Increment',
                     onPressed: _increment,
                     filled: true,
@@ -74,7 +74,7 @@ class _CounterSectionState extends State<CounterSection> {
                 ),
                 const SizedBox(width: 12),
                 Expanded(
-                  child: CustomButton(
+                  child: AppButton(
                     label: 'Reset',
                     onPressed: _reset,
                     filled: false,

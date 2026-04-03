@@ -1,13 +1,11 @@
 import 'package:flutter/material.dart';
 
-/// Small wrapper around Material buttons so the counter UI stays DRY.
+/// Project-wide text button: **filled** (strong action) or **outlined** (secondary).
 ///
-/// Reusing one widget for “Increment” and “Reset” shows how **composition**
-/// works: parent passes different [label] and [onPressed] callbacks; the child
-/// does not need to know *what* happens—only how it looks and that it invokes
-/// the callback when tapped.
-class CustomButton extends StatelessWidget {
-  const CustomButton({
+/// Keeps the counter row DRY and shows **composition**—the parent supplies
+/// [label] and [onPressed]; this widget only handles Material styling.
+class AppButton extends StatelessWidget {
+  const AppButton({
     super.key,
     required this.label,
     required this.onPressed,
@@ -16,6 +14,8 @@ class CustomButton extends StatelessWidget {
 
   final String label;
   final VoidCallback? onPressed;
+
+  /// When `true`, uses [FilledButton]; when `false`, [OutlinedButton].
   final bool filled;
 
   @override

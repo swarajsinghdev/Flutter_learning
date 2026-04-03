@@ -12,7 +12,7 @@ lib/
 └── widgets/
     ├── counter_section.dart     # StatefulWidget + setState
     ├── layout_demo_section.dart # Stateless layout teaching block
-    └── reusable_button.dart     # CustomButton
+    └── app_button.dart          # AppButton (filled / outlined)
 ```
 
 Run: `flutter run`
