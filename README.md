@@ -19,11 +19,12 @@ flutter doctor
 | -------------------- | --------------------------------------------------------------------------- |
 | `1.hello`            | Starter Flutter app (default counter demo template).                        |
 | `2.material_cupertino` | MaterialApp home menu; **Material** vs **Cupertino** screens via `Navigator.push`. |
+| `3.stateless_stateful` | **StatelessWidget** vs **StatefulWidget**: counter demo, `setState`, reset, color when count > 5 (`lib/main.dart`). |
 
 ### Run a project
 
 ```bash
-cd 1.hello   # or: cd 2.material_cupertino
+cd 1.hello   # or: cd 2.material_cupertino / cd 3.stateless_stateful
 flutter pub get
 flutter run
 ```
@@ -36,7 +37,8 @@ Pick a device when prompted (Chrome, macOS, iOS Simulator, Android emulator, or 
 Flutter_learning/
 ├── README.md                 # This file
 ├── 1.hello/                  # First exercise — standard `flutter create` app
-└── 2.material_cupertino/     # Lesson 2 — Material vs Cupertino (`lib/app.dart`, `lib/screens/`)
+├── 2.material_cupertino/     # Lesson 2 — Material vs Cupertino (`lib/app.dart`, `lib/screens/`)
+└── 3.stateless_stateful/     # Lesson 3 — Stateless vs Stateful (`lib/main.dart`)
 ```
 
 Add new lessons as `2.*`, `3.*`, etc., to keep the order clear.
