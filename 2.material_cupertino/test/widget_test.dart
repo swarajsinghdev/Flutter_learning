@@ -1,6 +1,6 @@
 import 'package:flutter_test/flutter_test.dart';
 
-import 'package:material_cupertino_demo/main.dart';
+import 'package:material_cupertino_demo/app.dart';
 
 void main() {
   testWidgets('Home menu shows Material and Cupertino actions', (tester) async {
